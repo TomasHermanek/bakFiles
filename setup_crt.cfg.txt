@@ -1,0 +1,16 @@
+#cesta do zlozky RSA 2.0
+rsa_path="/etc/openvpn/easy-rsa/2.0/"
+
+#nastavenie dlzky kluca v bitoch
+key_size=2048
+
+#nastavenia pre CA
+key_country="SK"
+key_province="NA"
+key_city="Nitra"
+key_org="Bakalaris"
+key_email="tomhermanek@gmail.com"
+key_email2="me@host.mydomain"
+
+#informacie o serveri
+server_name="server"
