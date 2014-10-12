@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/etc/vz/conf/101.atrapa &

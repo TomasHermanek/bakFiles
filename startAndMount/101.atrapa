@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sleep 10s
+
+CTID=101
+IPadress=192.168.56.3
+
+ifconfig veth"$CTID".0 0
+echo 1 > /proc/sys/net/ipv4/conf/veth"$CTID".0/forwarding
+echo 1 > /proc/sys/net/ipv4/conf/veth"$CTID".0/proxy_arp
+echo 1 > /proc/sys/net/ipv4/conf/eth0/forwarding
+echo 1 > /proc/sys/net/ipv4/conf/eth0/proxy_arp
+
+route del $IPadress
+ip route add $IPadress dev veth"$CTID".0
+
+vzctl exec 101 route del default dev venet0

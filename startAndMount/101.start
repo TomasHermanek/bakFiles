@@ -1,0 +1,9 @@
+#/etc/vz/conf/101.delRoute &
+CTID=101
+IPadress=192.168.56.3
+
+/sbin/ifconfig eth0 0
+/sbin/ip addr add $IPadress dev eth0
+#/sbin/route del default dev venet0
+/sbin/ip route add default dev eth0
+

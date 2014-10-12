@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sleep 10s
+
+vzctl exec 101 `route del default dev venet0`
